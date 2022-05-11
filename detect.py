@@ -3,7 +3,7 @@ import numpy as np
 import os
 import imutils
 from tensorflow.keras.models import load_model
-#mayur
+//re
 
 
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
