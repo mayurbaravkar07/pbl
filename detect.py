@@ -48,10 +48,20 @@ while ret:
     height, width = img.shape[:2]
 
     blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
-
     net.setInput(blob)
     outs = net.forward(output_layers)
 
     confidences = []
     boxes = []
     classIds = []
+
+for out in outs:
+        for detection in out:
+            scores = detection[5:]
+            class_id = np.argmax(scores)
+            confidence = scores[class_id]
+
+
+
+
+
