@@ -69,7 +69,10 @@ w = int(detection[2] * width)
                 x = int(center_x - w / 2)
                 y = int(center_y - h / 2)
 
-		
+		boxes.append([x, y, w, h])
+                confidences.append(float(confidence))
+                classIds.append(class_id)
+
 		
 		
 		
