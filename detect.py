@@ -38,3 +38,8 @@ def helmet_or_nohelmet(helmet_roi):
 			pass
 
 ret = True
+
+while ret:
+
+    ret, img = cap.read()
+    img = imutils.resize(img,height=500)
