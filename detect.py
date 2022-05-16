@@ -37,4 +37,4 @@ def helmet_or_nohelmet(helmet_roi):
 	except:
 			pass
 
-ret = False
+ret = True
