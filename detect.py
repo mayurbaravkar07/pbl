@@ -43,3 +43,15 @@ while ret:
 
     ret, img = cap.read()
     img = imutils.resize(img,height=500)
+	
+	 # img = cv2.imread('test.png')
+    height, width = img.shape[:2]
+
+    blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
+
+    net.setInput(blob)
+    outs = net.forward(output_layers)
+
+    confidences = []
+    boxes = []
+    classIds = []
