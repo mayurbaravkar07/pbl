@@ -88,6 +88,14 @@ w = int(detection[2] * width)
                 y_h = y-350
                 w_h = w+100
                 h_h = h+100
+		                cv2.rectangle(img, (x, y), (x + w, y + h), color, 7)
+                # h_r = img[max(0,(y-330)):max(0,(y-330 + h+100)) , max(0,(x-80)):max(0,(x-80 + w+130))]
+                if y_h>0 and x_h>0:
+                    h_r = img[y_h:y_h+h_h , x_h:x_h +w_h]
+                    c = helmet_or_nohelmet(h_r)
+                    cv2.putText(img,['helmet','no-helmet'][c],(x,y-100),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),2)                
+                    cv2.rectangle(img, (x_h, y_h), (x_h + w_h, y_h + h_h),(255,0,0), 10)
+
 		
 		
 		
