@@ -97,6 +97,16 @@ w = int(detection[2] * width)
                     cv2.rectangle(img, (x_h, y_h), (x_h + w_h, y_h + h_h),(255,0,0), 10)
 
 		
+  writer.write(img)
+    cv2.imshow("Image", img)
+
+    if cv2.waitKey(1) == 27:
+        break
+
+writer.release()
+cap.release()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 		
 		
 		
