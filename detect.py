@@ -75,6 +75,19 @@ w = int(detection[2] * width)
 
 		indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
 		
+    for i in range(len(boxes)):
+        if i in indexes:
+            x,y,w,h = boxes[i]
+            color = [int(c) for c in COLORS[classIds[i]]]
+            # green --> bike
+            # red --> number plate
+            if classIds[i]==0: #bike
+                helmet_roi = img[max(0,y):max(0,y)+max(0,h)//4,max(0,x):max(0,x)+max(0,w)]
+            else: #number plate
+                x_h = x-60
+                y_h = y-350
+                w_h = w+100
+                h_h = h+100
 		
 		
 		
