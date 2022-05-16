@@ -73,7 +73,7 @@ w = int(detection[2] * width)
                 confidences.append(float(confidence))
                 classIds.append(class_id)
 
-		
+		indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
 		
 		
 		
